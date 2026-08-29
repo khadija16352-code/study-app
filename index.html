@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Study Quest</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -15,7 +17,8 @@
 body{
     min-height:100vh;
     font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#ffd9ec,#ddd7ff);
+    background:
+        linear-gradient(135deg,#ffd8ec,#e2d9ff);
     color:#29263d;
 }
 
@@ -29,33 +32,36 @@ body{
 
 .creator{
     width:100%;
-    max-width:1100px;
-    min-height:700px;
-    background:rgba(255,255,255,.93);
-    border-radius:32px;
+    max-width:1150px;
+    min-height:720px;
+    background:#fff;
+    border-radius:30px;
     overflow:hidden;
     display:grid;
-    grid-template-columns:420px 1fr;
-    box-shadow:0 25px 70px rgba(60,40,100,.16);
+    grid-template-columns:430px 1fr;
+    box-shadow:0 20px 60px rgba(70,40,100,.18);
 }
 
-/* =====================
+
+/* =========================
    PREVIEW
-===================== */
+========================= */
 
 .preview{
-    background:linear-gradient(160deg,#ffd5e8,#e3d9ff);
-    padding:35px;
+    background:
+        linear-gradient(160deg,#ffd3e8,#e2d5ff);
+
+    padding:30px;
+
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    position:relative;
 }
 
 .preview h1{
-    font-size:27px;
-    margin-bottom:8px;
+    font-size:29px;
+    margin-bottom:7px;
 }
 
 .preview p{
@@ -63,227 +69,181 @@ body{
     margin-bottom:20px;
 }
 
-.character-stage{
-    width:300px;
-    height:430px;
-    background:rgba(255,255,255,.55);
+.stage{
+    width:320px;
+    height:470px;
+
+    background:
+        rgba(255,255,255,.6);
+
     border-radius:30px;
-    position:relative;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    overflow:hidden;
-}
 
-.character{
-    width:220px;
-    height:390px;
+    overflow:hidden;
+
     position:relative;
 }
 
-/* =====================
-   CHARACTER BODY
-===================== */
-
-.head{
-    position:absolute;
-    width:115px;
-    height:125px;
-    border-radius:50%;
-    background:#f2b58e;
-    top:38px;
-    left:52px;
-    z-index:4;
+.previewCharacter{
+    position:relative;
+    width:260px;
+    height:420px;
 }
+
+
+/* =========================
+   TEMP CHARACTER
+========================= */
 
 .body{
     position:absolute;
-    width:145px;
-    height:175px;
-    border-radius:50px 50px 25px 25px;
-    background:#ff8fc0;
+
+    width:140px;
+    height:190px;
+
+    left:60px;
     top:155px;
-    left:37px;
-    z-index:2;
+
+    border-radius:60px 60px 25px 25px;
+
+    background:#f59ac3;
 }
 
-.leg{
+.head{
     position:absolute;
-    width:43px;
-    height:105px;
-    background:#f2b58e;
-    border-radius:20px;
-    top:300px;
-    z-index:1;
-}
 
-.leg.left{
-    left:62px;
-}
+    width:120px;
+    height:125px;
 
-.leg.right{
-    left:115px;
+    left:70px;
+    top:45px;
+
+    border-radius:50%;
+
+    background:#f2b48d;
+
+    z-index:3;
 }
 
 .face{
     position:absolute;
+
+    left:104px;
     top:88px;
-    left:77px;
-    z-index:8;
-    font-size:32px;
+
+    font-size:30px;
+
+    z-index:10;
 }
 
 .hair{
     position:absolute;
-    width:135px;
-    height:130px;
-    top:25px;
-    left:42px;
-    border-radius:65px 65px 35px 35px;
-    background:#4b2d25;
-    z-index:6;
-}
 
-/* Hair styles */
-
-.hair.style2{
-    width:155px;
-    height:170px;
-    left:32px;
-    border-radius:70px;
-}
-
-.hair.style3{
-    width:125px;
-    height:115px;
-    left:47px;
-    background:#171717;
-}
-
-.hair.style4{
-    width:145px;
-    height:145px;
-    left:37px;
-    background:#8b4b27;
-    border-radius:50%;
-}
-
-/* =====================
-   BOY
-===================== */
-
-.character.boy .body{
-    background:#63a9e8;
-}
-
-.character.boy .hair{
-    height:90px;
+    left:55px;
     top:30px;
-    border-radius:55px 55px 20px 20px;
+
+    width:150px;
+    height:150px;
+
+    border-radius:70px;
+
+    background:#40271f;
+
+    z-index:5;
 }
 
-.character.boy .hair.style2{
-    height:105px;
-    background:#222;
-}
-
-.character.boy .hair.style3{
-    width:125px;
-    height:100px;
-    background:#75452e;
-}
-
-.character.boy .hair.style4{
-    width:145px;
-    height:100px;
-    background:#d39b51;
-}
-
-/* =====================
-   CLOTHES
-===================== */
-
-.outfit{
+.legs{
     position:absolute;
-    top:155px;
-    left:37px;
-    width:145px;
-    height:175px;
-    border-radius:50px 50px 25px 25px;
-    z-index:3;
+
+    top:330px;
+
+    width:43px;
+    height:80px;
+
+    background:#f2b48d;
+
+    border-radius:20px;
 }
 
-.outfit.pink{
-    background:#ff75b3;
+.leg1{
+    left:82px;
 }
 
-.outfit.purple{
-    background:#9675e8;
+.leg2{
+    left:137px;
 }
 
-.outfit.blue{
-    background:#4c9de8;
-}
-
-.outfit.green{
-    background:#67bd9a;
-}
-
-.outfit.black{
-    background:#35384d;
-}
-
-/* =====================
-   SHOES
-===================== */
-
-.shoes{
+.previewShoes{
     position:absolute;
-    bottom:0;
-    z-index:7;
-    font-size:34px;
-}
 
-.shoes.left{
-    left:45px;
-}
+    top:395px;
 
-.shoes.right{
-    left:112px;
-}
+    font-size:35px;
 
-/* =====================
-   BAG
-===================== */
-
-.bag{
-    position:absolute;
-    top:190px;
-    right:5px;
-    font-size:48px;
     z-index:10;
 }
 
-/* =====================
-   ACCESSORY
-===================== */
-
-.accessory{
-    position:absolute;
-    top:88px;
-    left:103px;
-    z-index:11;
-    font-size:28px;
+.shoe1{
+    left:65px;
 }
 
-/* =====================
+.shoe2{
+    left:125px;
+}
+
+.previewBag{
+    position:absolute;
+
+    right:15px;
+    top:205px;
+
+    width:75px;
+    max-height:100px;
+
+    object-fit:contain;
+
+    z-index:20;
+}
+
+.previewHijab{
+    position:absolute;
+
+    left:48px;
+    top:20px;
+
+    width:165px;
+    height:170px;
+
+    object-fit:contain;
+
+    z-index:8;
+}
+
+.previewAccessory{
+    position:absolute;
+
+    left:112px;
+    top:90px;
+
+    font-size:30px;
+
+    z-index:15;
+}
+
+
+/* =========================
    CONTROLS
-===================== */
+========================= */
 
 .controls{
     padding:38px;
+
     overflow-y:auto;
-    max-height:700px;
+
+    max-height:720px;
 }
 
 .logo{
@@ -293,11 +253,12 @@ body{
 
 .subtitle{
     color:#777;
-    margin:6px 0 25px;
+    margin-top:5px;
+    margin-bottom:25px;
 }
 
 .section{
-    margin-bottom:25px;
+    margin-bottom:24px;
 }
 
 .title{
@@ -312,18 +273,29 @@ body{
 
 .gender button{
     flex:1;
+
+    padding:14px;
+
     border:2px solid #eee;
-    background:white;
-    padding:13px;
-    border-radius:13px;
+
+    background:#fff;
+
+    border-radius:14px;
+
     cursor:pointer;
+
     font-size:15px;
 }
 
 .gender button.active{
-    border-color:#9075ff;
+    border-color:#8d70ff;
     background:#f3efff;
 }
+
+
+/* =========================
+   OPTIONS
+========================= */
 
 .options{
     display:flex;
@@ -332,13 +304,29 @@ body{
 }
 
 .option{
-    min-width:85px;
-    min-height:70px;
+    min-width:100px;
+    min-height:85px;
+
+    padding:8px;
+
     border:2px solid #eee;
+
     border-radius:15px;
-    background:white;
+
+    background:#fff;
+
     cursor:pointer;
-    padding:10px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:5px;
+
     transition:.2s;
 }
 
@@ -347,44 +335,80 @@ body{
 }
 
 .option.active{
-    border-color:#9075ff;
+    border-color:#8d70ff;
+
     background:#f3efff;
 }
 
-.option .emoji{
-    font-size:25px;
-    display:block;
-    margin-bottom:5px;
+.option img{
+    width:80px;
+    height:55px;
+
+    object-fit:contain;
 }
+
+.option .emoji{
+    font-size:28px;
+}
+
+.option span:last-child{
+    font-size:12px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
 
 .info{
     display:grid;
     gap:10px;
 }
 
-input,select{
+input,
+select{
+
     width:100%;
+
     padding:14px;
+
     border:2px solid #eee;
+
     border-radius:13px;
+
     font-size:15px;
+
     outline:none;
 }
 
+
+/* =========================
+   BUTTON
+========================= */
+
 .continue{
+
     width:100%;
+
     padding:16px;
+
     border:0;
+
     border-radius:15px;
+
     background:#806cff;
-    color:white;
+
+    color:#fff;
+
     font-size:16px;
+
     font-weight:bold;
+
     cursor:pointer;
+
     margin-top:5px;
 }
 
-/* MOBILE */
 
 @media(max-width:800px){
 
@@ -393,15 +417,18 @@ input,select{
     }
 
     .preview{
-        min-height:520px;
+        min-height:560px;
     }
 
     .controls{
         max-height:none;
     }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
@@ -409,553 +436,805 @@ input,select{
 
 <div class="creator">
 
-<!-- =====================
-     CHARACTER PREVIEW
-===================== -->
+
+<!-- =================================
+     PREVIEW
+================================= -->
 
 <div class="preview">
 
-    <h1>✨ Your Character</h1>
-    <p>Build your own study buddy</p>
+<h1>✨ Your Character</h1>
 
-    <div class="character-stage">
+<p>Build your own study buddy</p>
 
-        <div id="character" class="character">
 
-            <div id="hair" class="hair"></div>
+<div class="stage">
 
-            <div class="head"></div>
+<div class="previewCharacter">
 
-            <div class="face">😊</div>
+    <div class="hair" id="hair"></div>
 
-            <div id="outfit" class="outfit pink"></div>
+    <div class="head"></div>
 
-            <div class="leg left"></div>
-            <div class="leg right"></div>
+    <div class="face">😊</div>
 
-            <div id="bag" class="bag"></div>
+    <div class="body" id="body"></div>
 
-            <div id="accessory" class="accessory"></div>
+    <div class="legs leg1"></div>
+    <div class="legs leg2"></div>
 
-            <div class="shoes left">👟</div>
-            <div class="shoes right">👟</div>
+    <img
+        id="hijabPreview"
+        class="previewHijab"
+        style="display:none"
+    >
 
-        </div>
+    <img
+        id="bagPreview"
+        class="previewBag"
+        style="display:none"
+    >
 
+    <div
+        id="accessoryPreview"
+        class="previewAccessory">
+    </div>
+
+    <div
+        id="shoe1"
+        class="previewShoes shoe1">
+        👟
+    </div>
+
+    <div
+        id="shoe2"
+        class="previewShoes shoe2">
+        👟
     </div>
 
 </div>
 
+</div>
 
-<!-- =====================
-     OPTIONS
-===================== -->
+</div>
+
+
+
+<!-- =================================
+     CONTROLS
+================================= -->
 
 <div class="controls">
 
-    <div class="logo">
-        📚 Study Quest
-    </div>
+<div class="logo">
+📚 Study Quest
+</div>
 
-    <div class="subtitle">
-        Create your profile and customize your character.
-    </div>
+<div class="subtitle">
+Create your profile and customize your character.
+</div>
 
 
-    <!-- LANGUAGE -->
 
-    <div class="section">
+<!-- LANGUAGE -->
 
-        <div class="title">🌍 Language</div>
+<div class="section">
 
-        <div class="gender">
+<div class="title">
+🌍 Language
+</div>
 
-            <button class="active">
-                🇬🇧 English
-            </button>
+<div class="gender">
 
-            <button>
-                🇪🇬 العربية
-            </button>
+<button class="active">
+🇬🇧 English
+</button>
 
-        </div>
-
-    </div>
-
-
-    <!-- INFORMATION -->
-
-    <div class="section">
-
-        <div class="title">👤 Your information</div>
-
-        <div class="info">
-
-            <input
-                id="name"
-                placeholder="Your name">
-
-            <input
-                id="age"
-                type="number"
-                placeholder="Your age">
-
-            <select id="school">
-
-                <option value="">
-                    School year
-                </option>
-
-                <option>Primary 1</option>
-                <option>Primary 2</option>
-                <option>Primary 3</option>
-                <option>Primary 4</option>
-                <option>Primary 5</option>
-                <option>Primary 6</option>
-
-                <option>Preparatory 1</option>
-                <option>Preparatory 2</option>
-                <option>Preparatory 3</option>
-
-                <option>Secondary 1</option>
-                <option>Secondary 2</option>
-                <option>Secondary 3</option>
-
-            </select>
-
-        </div>
-
-    </div>
-
-
-    <!-- GENDER -->
-
-    <div class="section">
-
-        <div class="title">👤 Character</div>
-
-        <div class="gender">
-
-            <button
-                id="girlBtn"
-                class="active"
-                onclick="chooseGender('girl')">
-                👧 Girl
-            </button>
-
-            <button
-                id="boyBtn"
-                onclick="chooseGender('boy')">
-                👦 Boy
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- CHARACTER -->
-
-    <div class="section">
-
-        <div class="title">
-            🧍 Choose your character
-        </div>
-
-        <div class="options">
-
-            <button class="option active"
-                onclick="characterChoice(1)">
-                <span class="emoji">👧</span>
-                Girl 1
-            </button>
-
-            <button class="option"
-                onclick="characterChoice(2)">
-                <span class="emoji">👩</span>
-                Girl 2
-            </button>
-
-            <button class="option"
-                onclick="characterChoice(3)">
-                <span class="emoji">👱‍♀️</span>
-                Girl 3
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- HAIR -->
-
-    <div class="section">
-
-        <div class="title">
-            💇 Hair
-        </div>
-
-        <div class="options">
-
-            <button
-                class="option active"
-                onclick="hairChoice(1)">
-                <span class="emoji">💇</span>
-                Style 1
-            </button>
-
-            <button
-                class="option"
-                onclick="hairChoice(2)">
-                <span class="emoji">👩‍🦱</span>
-                Curly
-            </button>
-
-            <button
-                class="option"
-                onclick="hairChoice(3)">
-                <span class="emoji">👩‍🦰</span>
-                Short
-            </button>
-
-            <button
-                class="option"
-                onclick="hairChoice(4)">
-                <span class="emoji">👱</span>
-                Blonde
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- OUTFIT -->
-
-    <div class="section">
-
-        <div class="title">
-            👗 Outfit
-        </div>
-
-        <div class="options">
-
-            <button
-                class="option active"
-                onclick="outfitChoice('pink')">
-                <span class="emoji">👗</span>
-                Pink
-            </button>
-
-            <button
-                class="option"
-                onclick="outfitChoice('purple')">
-                <span class="emoji">💜</span>
-                Purple
-            </button>
-
-            <button
-                class="option"
-                onclick="outfitChoice('blue')">
-                <span class="emoji">💙</span>
-                Blue
-            </button>
-
-            <button
-                class="option"
-                onclick="outfitChoice('green')">
-                <span class="emoji">💚</span>
-                Green
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ACCESSORIES -->
-
-    <div class="section">
-
-        <div class="title">
-            ✨ Accessories
-        </div>
-
-        <div class="options">
-
-            <button
-                class="option"
-                onclick="accessoryChoice('👓')">
-                <span class="emoji">👓</span>
-                Glasses
-            </button>
-
-            <button
-                class="option"
-                onclick="accessoryChoice('🎀')">
-                <span class="emoji">🎀</span>
-                Bow
-            </button>
-
-            <button
-                class="option"
-                onclick="accessoryChoice('🎧')">
-                <span class="emoji">🎧</span>
-                Headphones
-            </button>
-
-            <button
-                class="option"
-                onclick="accessoryChoice('⭐')">
-                <span class="emoji">⭐</span>
-                Star
-            </button>
-
-            <button
-                class="option"
-                onclick="accessoryChoice('')">
-                <span class="emoji">🚫</span>
-                None
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- BAG -->
-
-    <div class="section">
-
-        <div class="title">
-            🎒 Bag
-        </div>
-
-        <div class="options">
-
-            <button
-                class="option"
-                onclick="bagChoice('🎒')">
-                <span class="emoji">🎒</span>
-                Backpack
-            </button>
-
-            <button
-                class="option"
-                onclick="bagChoice('👜')">
-                <span class="emoji">👜</span>
-                Bag
-            </button>
-
-            <button
-                class="option"
-                onclick="bagChoice('💼')">
-                <span class="emoji">💼</span>
-                Classic
-            </button>
-
-            <button
-                class="option"
-                onclick="bagChoice('')">
-                <span class="emoji">🚫</span>
-                None
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- SHOES -->
-
-    <div class="section">
-
-        <div class="title">
-            👟 Shoes
-        </div>
-
-        <div class="options">
-
-            <button
-                class="option"
-                onclick="shoesChoice('👟')">
-                <span class="emoji">👟</span>
-                Sneakers
-            </button>
-
-            <button
-                class="option"
-                onclick="shoesChoice('👢')">
-                <span class="emoji">👢</span>
-                Boots
-            </button>
-
-            <button
-                class="option"
-                onclick="shoesChoice('🥿')">
-                <span class="emoji">🥿</span>
-                Classic
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <button
-        class="continue"
-        onclick="finish()">
-        Continue →
-    </button>
+<button>
+🇪🇬 العربية
+</button>
 
 </div>
 
 </div>
+
+
+
+<!-- INFORMATION -->
+
+<div class="section">
+
+<div class="title">
+👤 Your information
 </div>
+
+<div class="info">
+
+<input
+    id="name"
+    placeholder="Your name"
+>
+
+<input
+    id="age"
+    type="number"
+    placeholder="Your age"
+>
+
+<select id="school">
+
+<option value="">
+Select your school year
+</option>
+
+<option>Primary 1</option>
+<option>Primary 2</option>
+<option>Primary 3</option>
+<option>Primary 4</option>
+<option>Primary 5</option>
+<option>Primary 6</option>
+
+<option>Preparatory 1</option>
+<option>Preparatory 2</option>
+<option>Preparatory 3</option>
+
+<option>Secondary 1</option>
+<option>Secondary 2</option>
+<option>Secondary 3</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+
+<!-- GENDER -->
+
+<div class="section">
+
+<div class="title">
+👤 Character type
+</div>
+
+<div class="gender">
+
+<button
+    id="girlBtn"
+    class="active"
+    onclick="setGender('girl')">
+
+👧 Girl
+
+</button>
+
+
+<button
+    id="boyBtn"
+    onclick="setGender('boy')">
+
+👦 Boy
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- CHARACTER -->
+
+<div class="section">
+
+<div class="title">
+🧍 Choose your character
+</div>
+
+<div class="options">
+
+<button
+    class="option active"
+    onclick="selectOption(this)">
+
+<span class="emoji">👧</span>
+<span>Girl 1</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="selectOption(this)">
+
+<span class="emoji">👩</span>
+<span>Girl 2</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="selectOption(this)">
+
+<span class="emoji">👱‍♀️</span>
+<span>Girl 3</span>
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- HAIR -->
+
+<div class="section">
+
+<div class="title">
+💇 Hair
+</div>
+
+<div class="options">
+
+<button
+    class="option active"
+    onclick="changeHair('#40271f',this)">
+
+<span class="emoji">💇</span>
+<span>Style 1</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeHair('#171717',this)">
+
+<span class="emoji">👩‍🦱</span>
+<span>Curly</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeHair('#8b4b27',this)">
+
+<span class="emoji">👩‍🦰</span>
+<span>Brown</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeHair('#d39b51',this)">
+
+<span class="emoji">👱</span>
+<span>Blonde</span>
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- OUTFIT -->
+
+<div class="section">
+
+<div class="title">
+👗 Outfit
+</div>
+
+<div class="options">
+
+<button
+    class="option active"
+    onclick="changeOutfit('#f59ac3',this)">
+
+<span class="emoji">👗</span>
+<span>Pink</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeOutfit('#9675e8',this)">
+
+<span class="emoji">💜</span>
+<span>Purple</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeOutfit('#55a7e8',this)">
+
+<span class="emoji">💙</span>
+<span>Blue</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeOutfit('#62bb96',this)">
+
+<span class="emoji">💚</span>
+<span>Green</span>
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ACCESSORIES -->
+
+<div class="section">
+
+<div class="title">
+✨ Accessories
+</div>
+
+<div class="options">
+
+<button
+    class="option"
+    onclick="changeAccessory('👓',this)">
+
+<span class="emoji">👓</span>
+<span>Glasses</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeAccessory('🎀',this)">
+
+<span class="emoji">🎀</span>
+<span>Bow</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeAccessory('🎧',this)">
+
+<span class="emoji">🎧</span>
+<span>Headphones</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeAccessory('',this)">
+
+<span class="emoji">🚫</span>
+<span>None</span>
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- HIJAB -->
+
+<div class="section">
+
+<div class="title">
+🧕 Hijab
+</div>
+
+<div class="options">
+
+
+<button
+    class="option"
+    onclick="changeHijab('hijab1.jpg',this)">
+
+<img src="hijab1.jpg">
+
+<span>Hijab 1</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeHijab('hijab2.jpg',this)">
+
+<img src="hijab2.jpg">
+
+<span>Hijab 2</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeHijab('hijab3.jpg',this)">
+
+<img src="hijab3.jpg">
+
+<span>Hijab 3</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeHijab('',this)">
+
+<span class="emoji">🚫</span>
+
+<span>None</span>
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- BAGS -->
+
+<div class="section">
+
+<div class="title">
+🎒 Bags
+</div>
+
+<div class="options">
+
+
+<button
+    class="option"
+    onclick="changeBag('bag1.jpg',this)">
+
+<img src="bag1.jpg">
+
+<span>Crossbody</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeBag('bag2.jpg',this)">
+
+<img src="bag2.jpg">
+
+<span>Shoulder Bag</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeBag('',this)">
+
+<span class="emoji">🎒</span>
+
+<span>Backpack</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeBag('',this)">
+
+<span class="emoji">🚫</span>
+
+<span>None</span>
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- SHOES -->
+
+<div class="section">
+
+<div class="title">
+👟 Shoes
+</div>
+
+<div class="options">
+
+
+<button
+    class="option"
+    onclick="changeShoes('shoes1.jpg',this)">
+
+<img src="shoes1.jpg">
+
+<span>Black High-top</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeShoes('emoji',this)">
+
+<span class="emoji">👟</span>
+
+<span>Sneakers</span>
+
+</button>
+
+
+<button
+    class="option"
+    onclick="changeShoes('boots',this)">
+
+<span class="emoji">👢</span>
+
+<span>Boots</span>
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<button
+    class="continue"
+    onclick="finish()">
+
+Continue →
+
+</button>
+
+
+</div>
+
+</div>
+
+</div>
+
 
 
 <script>
 
-let gender = "girl";
-let characterNumber = 1;
+
+/* =================================
+   OPTION SELECT
+================================= */
+
+function selectOption(button){
+
+    button
+    .parentElement
+    .querySelectorAll(".option")
+    .forEach(item => {
+
+        item.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+}
 
 
-/* =====================
+
+/* =================================
    GENDER
-===================== */
+================================= */
 
-function chooseGender(type){
+function setGender(type){
 
-    gender = type;
+    const girl =
+        document.getElementById("girlBtn");
 
-    document
-        .getElementById("girlBtn")
-        .classList.toggle(
-            "active",
-            type === "girl"
-        );
+    const boy =
+        document.getElementById("boyBtn");
 
-    document
-        .getElementById("boyBtn")
-        .classList.toggle(
-            "active",
-            type === "boy"
-        );
+    if(type === "girl"){
 
-    const character =
-        document.getElementById("character");
+        girl.classList.add("active");
+        boy.classList.remove("active");
 
-    if(type === "boy"){
-        character.classList.add("boy");
     }else{
-        character.classList.remove("boy");
+
+        boy.classList.add("active");
+        girl.classList.remove("active");
+
+        document
+        .getElementById("body")
+        .style.background="#55a7e8";
+
     }
+
 }
 
 
-/* =====================
-   CHARACTER
-===================== */
 
-function characterChoice(number){
-
-    characterNumber = number;
-
-    document
-        .querySelectorAll(".options")
-        [3]
-        ?.querySelectorAll(".option")
-        .forEach((x,i)=>{
-            x.classList.toggle(
-                "active",
-                i === number-1
-            );
-        });
-}
-
-
-/* =====================
+/* =================================
    HAIR
-===================== */
+================================= */
 
-function hairChoice(number){
+function changeHair(color,button){
 
-    const hair =
-        document.getElementById("hair");
+    document
+    .getElementById("hair")
+    .style.background=color;
 
-    hair.className =
-        "hair style" + number;
+    selectOption(button);
 }
 
 
-/* =====================
+
+/* =================================
    OUTFIT
-===================== */
+================================= */
 
-function outfitChoice(type){
+function changeOutfit(color,button){
 
     document
-        .getElementById("outfit")
-        .className =
-        "outfit " + type;
+    .getElementById("body")
+    .style.background=color;
+
+    selectOption(button);
 }
 
 
-/* =====================
+
+/* =================================
    ACCESSORY
-===================== */
+================================= */
 
-function accessoryChoice(value){
+function changeAccessory(value,button){
 
     document
-        .getElementById("accessory")
-        .textContent = value;
+    .getElementById("accessoryPreview")
+    .textContent=value;
+
+    selectOption(button);
 }
 
 
-/* =====================
+
+/* =================================
+   HIJAB
+================================= */
+
+function changeHijab(file,button){
+
+    const image =
+        document.getElementById("hijabPreview");
+
+    if(file){
+
+        image.src=file;
+
+        image.style.display="block";
+
+    }else{
+
+        image.style.display="none";
+
+    }
+
+    selectOption(button);
+}
+
+
+
+/* =================================
    BAG
-===================== */
+================================= */
 
-function bagChoice(value){
+function changeBag(file,button){
 
-    document
-        .getElementById("bag")
-        .textContent = value;
+    const image =
+        document.getElementById("bagPreview");
+
+    if(file){
+
+        image.src=file;
+
+        image.style.display="block";
+
+    }else{
+
+        image.style.display="none";
+
+    }
+
+    selectOption(button);
 }
 
 
-/* =====================
+
+/* =================================
    SHOES
-===================== */
+================================= */
 
-function shoesChoice(value){
+function changeShoes(file,button){
 
-    document
-        .querySelectorAll(".shoes")
-        .forEach(x=>{
-            x.textContent = value;
-        });
+    const shoe1 =
+        document.getElementById("shoe1");
+
+    const shoe2 =
+        document.getElementById("shoe2");
+
+    if(file === "emoji"){
+
+        shoe1.textContent="👟";
+        shoe2.textContent="👟";
+
+    }
+
+    else if(file === "boots"){
+
+        shoe1.textContent="👢";
+        shoe2.textContent="👢";
+
+    }
+
+    else{
+
+        shoe1.innerHTML =
+        '<img src="'+file+'" style="width:75px;height:45px;object-fit:contain;">';
+
+        shoe2.innerHTML =
+        '<img src="'+file+'" style="width:75px;height:45px;object-fit:contain;">';
+
+    }
+
+    selectOption(button);
 }
 
 
-/* =====================
+
+/* =================================
    SAVE
-===================== */
+================================= */
 
 function finish(){
 
     const name =
-        document.getElementById("name")
-        .value.trim();
+        document
+        .getElementById("name")
+        .value
+        .trim();
 
     const age =
-        document.getElementById("age")
+        document
+        .getElementById("age")
         .value;
 
     const school =
-        document.getElementById("school")
+        document
+        .getElementById("school")
         .value;
+
 
     if(!name || !age || !school){
 
@@ -964,7 +1243,9 @@ function finish(){
         );
 
         return;
+
     }
+
 
     localStorage.setItem(
         "studyQuestName",
@@ -981,19 +1262,11 @@ function finish(){
         school
     );
 
-    localStorage.setItem(
-        "studyQuestGender",
-        gender
-    );
-
-    localStorage.setItem(
-        "studyQuestCharacter",
-        characterNumber
-    );
 
     alert(
         "Your character is ready! 🎉"
     );
+
 }
 
 </script>
