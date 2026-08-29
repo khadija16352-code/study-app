@@ -15,48 +15,47 @@
 body{
     min-height:100vh;
     font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#ffd9eb,#ddd8ff);
+    background:linear-gradient(135deg,#ffd9ec,#ddd7ff);
     color:#29263d;
 }
 
 .page{
     min-height:100vh;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     padding:25px;
 }
 
-.card{
+.creator{
     width:100%;
-    max-width:1050px;
-    min-height:680px;
-    background:rgba(255,255,255,.9);
-    backdrop-filter:blur(20px);
+    max-width:1100px;
+    min-height:700px;
+    background:rgba(255,255,255,.93);
     border-radius:32px;
-    box-shadow:0 25px 70px rgba(50,30,90,.15);
-    display:grid;
-    grid-template-columns:380px 1fr;
     overflow:hidden;
+    display:grid;
+    grid-template-columns:420px 1fr;
+    box-shadow:0 25px 70px rgba(60,40,100,.16);
 }
 
-/* =========================
+/* =====================
    PREVIEW
-========================= */
+===================== */
 
 .preview{
-    background:linear-gradient(160deg,#ffd5e9,#e8dcff);
+    background:linear-gradient(160deg,#ffd5e8,#e3d9ff);
+    padding:35px;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    padding:30px;
     position:relative;
 }
 
 .preview h1{
-    font-size:25px;
-    margin-bottom:10px;
+    font-size:27px;
+    margin-bottom:8px;
 }
 
 .preview p{
@@ -64,75 +63,245 @@ body{
     margin-bottom:20px;
 }
 
-.character-box{
-    width:260px;
-    height:390px;
-    border-radius:30px;
+.character-stage{
+    width:300px;
+    height:430px;
     background:rgba(255,255,255,.55);
+    border-radius:30px;
+    position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
     overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
 }
-
-/*
-الصورة عبارة عن 3 أعمدة × صفين.
-كل اختيار بياخد جزء من الصورة.
-*/
 
 .character{
-    width:260px;
+    width:220px;
     height:390px;
-    background-image:url("characters.png");
-    background-size:300% 200%;
-    background-repeat:no-repeat;
-    transition:.3s;
+    position:relative;
 }
 
-/* 6 characters */
+/* =====================
+   CHARACTER BODY
+===================== */
 
-.c1{background-position:0% 0%;}
-.c2{background-position:50% 0%;}
-.c3{background-position:100% 0%;}
-.c4{background-position:0% 100%;}
-.c5{background-position:50% 100%;}
-.c6{background-position:100% 100%;}
-
-.selected-name{
-    margin-top:18px;
-    font-weight:bold;
-    font-size:18px;
+.head{
+    position:absolute;
+    width:115px;
+    height:125px;
+    border-radius:50%;
+    background:#f2b58e;
+    top:38px;
+    left:52px;
+    z-index:4;
 }
 
-/* =========================
-   CUSTOMIZATION
-========================= */
+.body{
+    position:absolute;
+    width:145px;
+    height:175px;
+    border-radius:50px 50px 25px 25px;
+    background:#ff8fc0;
+    top:155px;
+    left:37px;
+    z-index:2;
+}
 
-.customize{
-    padding:42px;
+.leg{
+    position:absolute;
+    width:43px;
+    height:105px;
+    background:#f2b58e;
+    border-radius:20px;
+    top:300px;
+    z-index:1;
+}
+
+.leg.left{
+    left:62px;
+}
+
+.leg.right{
+    left:115px;
+}
+
+.face{
+    position:absolute;
+    top:88px;
+    left:77px;
+    z-index:8;
+    font-size:32px;
+}
+
+.hair{
+    position:absolute;
+    width:135px;
+    height:130px;
+    top:25px;
+    left:42px;
+    border-radius:65px 65px 35px 35px;
+    background:#4b2d25;
+    z-index:6;
+}
+
+/* Hair styles */
+
+.hair.style2{
+    width:155px;
+    height:170px;
+    left:32px;
+    border-radius:70px;
+}
+
+.hair.style3{
+    width:125px;
+    height:115px;
+    left:47px;
+    background:#171717;
+}
+
+.hair.style4{
+    width:145px;
+    height:145px;
+    left:37px;
+    background:#8b4b27;
+    border-radius:50%;
+}
+
+/* =====================
+   BOY
+===================== */
+
+.character.boy .body{
+    background:#63a9e8;
+}
+
+.character.boy .hair{
+    height:90px;
+    top:30px;
+    border-radius:55px 55px 20px 20px;
+}
+
+.character.boy .hair.style2{
+    height:105px;
+    background:#222;
+}
+
+.character.boy .hair.style3{
+    width:125px;
+    height:100px;
+    background:#75452e;
+}
+
+.character.boy .hair.style4{
+    width:145px;
+    height:100px;
+    background:#d39b51;
+}
+
+/* =====================
+   CLOTHES
+===================== */
+
+.outfit{
+    position:absolute;
+    top:155px;
+    left:37px;
+    width:145px;
+    height:175px;
+    border-radius:50px 50px 25px 25px;
+    z-index:3;
+}
+
+.outfit.pink{
+    background:#ff75b3;
+}
+
+.outfit.purple{
+    background:#9675e8;
+}
+
+.outfit.blue{
+    background:#4c9de8;
+}
+
+.outfit.green{
+    background:#67bd9a;
+}
+
+.outfit.black{
+    background:#35384d;
+}
+
+/* =====================
+   SHOES
+===================== */
+
+.shoes{
+    position:absolute;
+    bottom:0;
+    z-index:7;
+    font-size:34px;
+}
+
+.shoes.left{
+    left:45px;
+}
+
+.shoes.right{
+    left:112px;
+}
+
+/* =====================
+   BAG
+===================== */
+
+.bag{
+    position:absolute;
+    top:190px;
+    right:5px;
+    font-size:48px;
+    z-index:10;
+}
+
+/* =====================
+   ACCESSORY
+===================== */
+
+.accessory{
+    position:absolute;
+    top:88px;
+    left:103px;
+    z-index:11;
+    font-size:28px;
+}
+
+/* =====================
+   CONTROLS
+===================== */
+
+.controls{
+    padding:38px;
     overflow-y:auto;
-    max-height:680px;
+    max-height:700px;
 }
 
 .logo{
     font-size:30px;
     font-weight:800;
-    margin-bottom:7px;
 }
 
 .subtitle{
     color:#777;
-    margin-bottom:30px;
+    margin:6px 0 25px;
 }
 
 .section{
-    margin-bottom:27px;
+    margin-bottom:25px;
 }
 
-.section-title{
+.title{
     font-weight:bold;
-    font-size:16px;
     margin-bottom:12px;
 }
 
@@ -143,39 +312,34 @@ body{
 
 .gender button{
     flex:1;
-    padding:13px;
     border:2px solid #eee;
-    border-radius:14px;
     background:white;
+    padding:13px;
+    border-radius:13px;
     cursor:pointer;
     font-size:15px;
 }
 
 .gender button.active{
-    border-color:#9b75ff;
-    background:#f5efff;
+    border-color:#9075ff;
+    background:#f3efff;
 }
 
-/* CHARACTER OPTIONS */
-
 .options{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
+    display:flex;
+    flex-wrap:wrap;
     gap:10px;
 }
 
 .option{
-    min-height:100px;
+    min-width:85px;
+    min-height:70px;
     border:2px solid #eee;
+    border-radius:15px;
     background:white;
-    border-radius:17px;
     cursor:pointer;
+    padding:10px;
     transition:.2s;
-    padding:8px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
 }
 
 .option:hover{
@@ -183,77 +347,34 @@ body{
 }
 
 .option.active{
-    border-color:#9b75ff;
-    background:#f5efff;
+    border-color:#9075ff;
+    background:#f3efff;
 }
 
-.mini-character{
-    width:70px;
-    height:75px;
-    background-image:url("characters.png");
-    background-size:300% 200%;
-    background-repeat:no-repeat;
-}
-
-.m1{background-position:0% 0%;}
-.m2{background-position:50% 0%;}
-.m3{background-position:100% 0%;}
-.m4{background-position:0% 100%;}
-.m5{background-position:50% 100%;}
-.m6{background-position:100% 100%;}
-
-/* OTHER OPTIONS */
-
-.item-options{
-    display:flex;
-    flex-wrap:wrap;
-    gap:9px;
-}
-
-.item{
-    min-width:75px;
-    padding:13px 10px;
-    border:2px solid #eee;
-    background:white;
-    border-radius:13px;
-    cursor:pointer;
-    text-align:center;
-    font-size:24px;
-}
-
-.item span{
+.option .emoji{
+    font-size:25px;
     display:block;
-    font-size:11px;
-    margin-top:5px;
+    margin-bottom:5px;
 }
 
-.item.active{
-    border-color:#ff78b5;
-    background:#fff0f7;
+.info{
+    display:grid;
+    gap:10px;
 }
 
-/* NAME */
-
-input,
-select{
+input,select{
     width:100%;
     padding:14px;
     border:2px solid #eee;
     border-radius:13px;
-    outline:none;
     font-size:15px;
-    background:white;
-}
-
-input:focus,
-select:focus{
-    border-color:#9b75ff;
+    outline:none;
 }
 
 .continue{
     width:100%;
-    border:0;
     padding:16px;
+    border:0;
     border-radius:15px;
     background:#806cff;
     color:white;
@@ -263,29 +384,20 @@ select:focus{
     margin-top:5px;
 }
 
-.continue:hover{
-    transform:translateY(-2px);
-}
-
 /* MOBILE */
 
 @media(max-width:800px){
 
-    body{
-        overflow:auto;
-    }
-
-    .card{
+    .creator{
         grid-template-columns:1fr;
     }
 
     .preview{
-        min-height:480px;
+        min-height:520px;
     }
 
-    .customize{
+    .controls{
         max-height:none;
-        padding:28px 22px;
     }
 }
 </style>
@@ -295,41 +407,58 @@ select:focus{
 
 <div class="page">
 
-<div class="card">
+<div class="creator">
 
-<!-- =========================
+<!-- =====================
      CHARACTER PREVIEW
-========================= -->
+===================== -->
 
 <div class="preview">
 
     <h1>✨ Your Character</h1>
+    <p>Build your own study buddy</p>
 
-    <p>Make your study buddy yours!</p>
+    <div class="character-stage">
 
-    <div class="character-box">
-        <div id="mainCharacter" class="character c1"></div>
-    </div>
+        <div id="character" class="character">
 
-    <div id="selectedName" class="selected-name">
-        Character 1
+            <div id="hair" class="hair"></div>
+
+            <div class="head"></div>
+
+            <div class="face">😊</div>
+
+            <div id="outfit" class="outfit pink"></div>
+
+            <div class="leg left"></div>
+            <div class="leg right"></div>
+
+            <div id="bag" class="bag"></div>
+
+            <div id="accessory" class="accessory"></div>
+
+            <div class="shoes left">👟</div>
+            <div class="shoes right">👟</div>
+
+        </div>
+
     </div>
 
 </div>
 
 
-<!-- =========================
-     CUSTOMIZATION
-========================= -->
+<!-- =====================
+     OPTIONS
+===================== -->
 
-<div class="customize">
+<div class="controls">
 
     <div class="logo">
         📚 Study Quest
     </div>
 
     <div class="subtitle">
-        Create your profile & choose your style
+        Create your profile and customize your character.
     </div>
 
 
@@ -337,9 +466,7 @@ select:focus{
 
     <div class="section">
 
-        <div class="section-title">
-            🌍 Language
-        </div>
+        <div class="title">🌍 Language</div>
 
         <div class="gender">
 
@@ -356,50 +483,47 @@ select:focus{
     </div>
 
 
-    <!-- BASIC INFO -->
+    <!-- INFORMATION -->
 
     <div class="section">
 
-        <div class="section-title">
-            👤 Your information
+        <div class="title">👤 Your information</div>
+
+        <div class="info">
+
+            <input
+                id="name"
+                placeholder="Your name">
+
+            <input
+                id="age"
+                type="number"
+                placeholder="Your age">
+
+            <select id="school">
+
+                <option value="">
+                    School year
+                </option>
+
+                <option>Primary 1</option>
+                <option>Primary 2</option>
+                <option>Primary 3</option>
+                <option>Primary 4</option>
+                <option>Primary 5</option>
+                <option>Primary 6</option>
+
+                <option>Preparatory 1</option>
+                <option>Preparatory 2</option>
+                <option>Preparatory 3</option>
+
+                <option>Secondary 1</option>
+                <option>Secondary 2</option>
+                <option>Secondary 3</option>
+
+            </select>
+
         </div>
-
-        <input
-            id="name"
-            type="text"
-            placeholder="Your name">
-
-        <br><br>
-
-        <input
-            id="age"
-            type="number"
-            placeholder="Your age">
-
-        <br><br>
-
-        <select id="school">
-
-            <option value="">
-                Select your school year
-            </option>
-
-            <option>Primary 1</option>
-            <option>Primary 2</option>
-            <option>Primary 3</option>
-            <option>Primary 4</option>
-            <option>Primary 5</option>
-            <option>Primary 6</option>
-
-            <option>Preparatory 1</option>
-            <option>Preparatory 2</option>
-            <option>Preparatory 3</option>
-
-            <option>Secondary 1</option>
-            <option>Secondary 2</option>
-            <option>Secondary 3</option>
-
-        </select>
 
     </div>
 
@@ -408,27 +532,21 @@ select:focus{
 
     <div class="section">
 
-        <div class="section-title">
-            👤 Character type
-        </div>
+        <div class="title">👤 Character</div>
 
         <div class="gender">
 
             <button
-                id="girlButton"
+                id="girlBtn"
                 class="active"
-                onclick="setGender('girl')">
-
+                onclick="chooseGender('girl')">
                 👧 Girl
-
             </button>
 
             <button
-                id="boyButton"
-                onclick="setGender('boy')">
-
+                id="boyBtn"
+                onclick="chooseGender('boy')">
                 👦 Boy
-
             </button>
 
         </div>
@@ -440,40 +558,28 @@ select:focus{
 
     <div class="section">
 
-        <div class="section-title">
-            👤 Choose your character
+        <div class="title">
+            🧍 Choose your character
         </div>
 
         <div class="options">
 
-            <button class="option active" onclick="selectCharacter(1)">
-                <div class="mini-character m1"></div>
-                <small>Girl 1</small>
+            <button class="option active"
+                onclick="characterChoice(1)">
+                <span class="emoji">👧</span>
+                Girl 1
             </button>
 
-            <button class="option" onclick="selectCharacter(2)">
-                <div class="mini-character m2"></div>
-                <small>Girl 2</small>
+            <button class="option"
+                onclick="characterChoice(2)">
+                <span class="emoji">👩</span>
+                Girl 2
             </button>
 
-            <button class="option" onclick="selectCharacter(3)">
-                <div class="mini-character m3"></div>
-                <small>Girl 3</small>
-            </button>
-
-            <button class="option" onclick="selectCharacter(4)">
-                <div class="mini-character m4"></div>
-                <small>Boy 1</small>
-            </button>
-
-            <button class="option" onclick="selectCharacter(5)">
-                <div class="mini-character m5"></div>
-                <small>Boy 2</small>
-            </button>
-
-            <button class="option" onclick="selectCharacter(6)">
-                <div class="mini-character m6"></div>
-                <small>Boy 3</small>
+            <button class="option"
+                onclick="characterChoice(3)">
+                <span class="emoji">👱‍♀️</span>
+                Girl 3
             </button>
 
         </div>
@@ -485,30 +591,38 @@ select:focus{
 
     <div class="section">
 
-        <div class="section-title">
+        <div class="title">
             💇 Hair
         </div>
 
-        <div class="item-options">
+        <div class="options">
 
-            <button class="item active">
-                💇
-                <span>Style 1</span>
+            <button
+                class="option active"
+                onclick="hairChoice(1)">
+                <span class="emoji">💇</span>
+                Style 1
             </button>
 
-            <button class="item">
-                👩‍🦱
-                <span>Style 2</span>
+            <button
+                class="option"
+                onclick="hairChoice(2)">
+                <span class="emoji">👩‍🦱</span>
+                Curly
             </button>
 
-            <button class="item">
-                👩‍🦰
-                <span>Style 3</span>
+            <button
+                class="option"
+                onclick="hairChoice(3)">
+                <span class="emoji">👩‍🦰</span>
+                Short
             </button>
 
-            <button class="item">
-                👱
-                <span>Style 4</span>
+            <button
+                class="option"
+                onclick="hairChoice(4)">
+                <span class="emoji">👱</span>
+                Blonde
             </button>
 
         </div>
@@ -520,60 +634,38 @@ select:focus{
 
     <div class="section">
 
-        <div class="section-title">
-            👕 Outfit
+        <div class="title">
+            👗 Outfit
         </div>
 
-        <div class="item-options">
+        <div class="options">
 
-            <button class="item active">
-                👕
-                <span>Casual</span>
+            <button
+                class="option active"
+                onclick="outfitChoice('pink')">
+                <span class="emoji">👗</span>
+                Pink
             </button>
 
-            <button class="item">
-                👗
-                <span>Dress</span>
+            <button
+                class="option"
+                onclick="outfitChoice('purple')">
+                <span class="emoji">💜</span>
+                Purple
             </button>
 
-            <button class="item">
-                🧥
-                <span>Jacket</span>
+            <button
+                class="option"
+                onclick="outfitChoice('blue')">
+                <span class="emoji">💙</span>
+                Blue
             </button>
 
-            <button class="item">
-                👚
-                <span>Style 4</span>
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- SHOES -->
-
-    <div class="section">
-
-        <div class="section-title">
-            👟 Shoes
-        </div>
-
-        <div class="item-options">
-
-            <button class="item active">
-                👟
-                <span>Sneakers</span>
-            </button>
-
-            <button class="item">
-                👢
-                <span>Boots</span>
-            </button>
-
-            <button class="item">
-                🥿
-                <span>Classic</span>
+            <button
+                class="option"
+                onclick="outfitChoice('green')">
+                <span class="emoji">💚</span>
+                Green
             </button>
 
         </div>
@@ -585,30 +677,45 @@ select:focus{
 
     <div class="section">
 
-        <div class="section-title">
+        <div class="title">
             ✨ Accessories
         </div>
 
-        <div class="item-options">
+        <div class="options">
 
-            <button class="item">
-                👓
-                <span>Glasses</span>
+            <button
+                class="option"
+                onclick="accessoryChoice('👓')">
+                <span class="emoji">👓</span>
+                Glasses
             </button>
 
-            <button class="item">
-                🎒
-                <span>Bag</span>
+            <button
+                class="option"
+                onclick="accessoryChoice('🎀')">
+                <span class="emoji">🎀</span>
+                Bow
             </button>
 
-            <button class="item">
-                🎧
-                <span>Headphones</span>
+            <button
+                class="option"
+                onclick="accessoryChoice('🎧')">
+                <span class="emoji">🎧</span>
+                Headphones
             </button>
 
-            <button class="item">
-                🎀
-                <span>Bow</span>
+            <button
+                class="option"
+                onclick="accessoryChoice('⭐')">
+                <span class="emoji">⭐</span>
+                Star
+            </button>
+
+            <button
+                class="option"
+                onclick="accessoryChoice('')">
+                <span class="emoji">🚫</span>
+                None
             </button>
 
         </div>
@@ -616,7 +723,88 @@ select:focus{
     </div>
 
 
-    <button class="continue" onclick="finishProfile()">
+    <!-- BAG -->
+
+    <div class="section">
+
+        <div class="title">
+            🎒 Bag
+        </div>
+
+        <div class="options">
+
+            <button
+                class="option"
+                onclick="bagChoice('🎒')">
+                <span class="emoji">🎒</span>
+                Backpack
+            </button>
+
+            <button
+                class="option"
+                onclick="bagChoice('👜')">
+                <span class="emoji">👜</span>
+                Bag
+            </button>
+
+            <button
+                class="option"
+                onclick="bagChoice('💼')">
+                <span class="emoji">💼</span>
+                Classic
+            </button>
+
+            <button
+                class="option"
+                onclick="bagChoice('')">
+                <span class="emoji">🚫</span>
+                None
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SHOES -->
+
+    <div class="section">
+
+        <div class="title">
+            👟 Shoes
+        </div>
+
+        <div class="options">
+
+            <button
+                class="option"
+                onclick="shoesChoice('👟')">
+                <span class="emoji">👟</span>
+                Sneakers
+            </button>
+
+            <button
+                class="option"
+                onclick="shoesChoice('👢')">
+                <span class="emoji">👢</span>
+                Boots
+            </button>
+
+            <button
+                class="option"
+                onclick="shoesChoice('🥿')">
+                <span class="emoji">🥿</span>
+                Classic
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="continue"
+        onclick="finish()">
         Continue →
     </button>
 
@@ -628,114 +816,152 @@ select:focus{
 
 <script>
 
-/* =========================
-   CHARACTER SELECTION
-========================= */
-
-let selectedCharacter = 1;
 let gender = "girl";
+let characterNumber = 1;
 
-function selectCharacter(number){
 
-    selectedCharacter = number;
+/* =====================
+   GENDER
+===================== */
 
-    const character =
-        document.getElementById("mainCharacter");
+function chooseGender(type){
 
-    character.className =
-        "character c" + number;
-
-    document.getElementById("selectedName").textContent =
-        "Character " + number;
+    gender = type;
 
     document
-        .querySelectorAll(".option")
-        .forEach((button,index)=>{
+        .getElementById("girlBtn")
+        .classList.toggle(
+            "active",
+            type === "girl"
+        );
 
-            button.classList.toggle(
+    document
+        .getElementById("boyBtn")
+        .classList.toggle(
+            "active",
+            type === "boy"
+        );
+
+    const character =
+        document.getElementById("character");
+
+    if(type === "boy"){
+        character.classList.add("boy");
+    }else{
+        character.classList.remove("boy");
+    }
+}
+
+
+/* =====================
+   CHARACTER
+===================== */
+
+function characterChoice(number){
+
+    characterNumber = number;
+
+    document
+        .querySelectorAll(".options")
+        [3]
+        ?.querySelectorAll(".option")
+        .forEach((x,i)=>{
+            x.classList.toggle(
                 "active",
-                index + 1 === number
+                i === number-1
             );
-
         });
 }
 
 
-/* =========================
-   GENDER
-========================= */
+/* =====================
+   HAIR
+===================== */
 
-function setGender(type){
+function hairChoice(number){
 
-    gender = type;
+    const hair =
+        document.getElementById("hair");
 
-    const girl =
-        document.getElementById("girlButton");
-
-    const boy =
-        document.getElementById("boyButton");
-
-    girl.classList.toggle(
-        "active",
-        type === "girl"
-    );
-
-    boy.classList.toggle(
-        "active",
-        type === "boy"
-    );
-
-    /*
-    حاليا بنعرض الشخصيات كلها.
-    بعدين هنخلي Girl تعرض البنات فقط
-    وBoy يعرض الأولاد فقط.
-    */
-
+    hair.className =
+        "hair style" + number;
 }
 
 
-/* =========================
-   ITEM SELECTION
-========================= */
+/* =====================
+   OUTFIT
+===================== */
 
-document.querySelectorAll(".item").forEach(item => {
+function outfitChoice(type){
 
-    item.addEventListener("click",function(){
-
-        const group =
-            this.parentElement;
-
-        group
-            .querySelectorAll(".item")
-            .forEach(x =>
-                x.classList.remove("active")
-            );
-
-        this.classList.add("active");
-
-    });
-
-});
+    document
+        .getElementById("outfit")
+        .className =
+        "outfit " + type;
+}
 
 
-/* =========================
-   SAVE PROFILE
-========================= */
+/* =====================
+   ACCESSORY
+===================== */
 
-function finishProfile(){
+function accessoryChoice(value){
+
+    document
+        .getElementById("accessory")
+        .textContent = value;
+}
+
+
+/* =====================
+   BAG
+===================== */
+
+function bagChoice(value){
+
+    document
+        .getElementById("bag")
+        .textContent = value;
+}
+
+
+/* =====================
+   SHOES
+===================== */
+
+function shoesChoice(value){
+
+    document
+        .querySelectorAll(".shoes")
+        .forEach(x=>{
+            x.textContent = value;
+        });
+}
+
+
+/* =====================
+   SAVE
+===================== */
+
+function finish(){
 
     const name =
-        document.getElementById("name").value.trim();
+        document.getElementById("name")
+        .value.trim();
 
     const age =
-        document.getElementById("age").value;
+        document.getElementById("age")
+        .value;
 
     const school =
-        document.getElementById("school").value;
+        document.getElementById("school")
+        .value;
 
     if(!name || !age || !school){
 
-        alert("Please complete your information ❤️");
+        alert(
+            "Please complete your information ❤️"
+        );
 
         return;
     }
@@ -762,7 +988,7 @@ function finishProfile(){
 
     localStorage.setItem(
         "studyQuestCharacter",
-        selectedCharacter
+        characterNumber
     );
 
     alert(
